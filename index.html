@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blink Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Blink Tac Toe 🧠</h1>
+
+    <!-- Help Section -->
+    <button id="toggle-help">❓ Help</button>
+
+    <div id="help-section" class="hidden">
+      <h2>📘 How to Play</h2>
+      <ul>
+        <li>Game is played on a 3x3 grid.</li>
+        <li>Each player selects an emoji category.</li>
+        <li>Random emoji from their category appears each turn.</li>
+        <li>Only 3 emojis allowed per player at a time — oldest one vanishes!</li>
+        <li>You can't reuse the vanished cell immediately.</li>
+        <li>Win by making a line of 3 of your emojis.</li>
+      </ul>
+    </div>
+
+    <!-- Category Selection -->
+    <div id="player-selection">
+      <h2>🎭 Choose Your Emoji Categories</h2>
+      <label>Player 1:
+        <select id="player1-category">
+          <option value="🐶,🐱,🐵,🐰">Animals</option>
+          <option value="🍕,🍟,🍔,🍩">Food</option>
+          <option value="⚽,🏀,🏈,🎾">Sports</option>
+          <option value="😎,😂,😍,😱">Emojis</option>
+        </select>
+      </label>
+      <label>Player 2:
+        <select id="player2-category">
+          <option value="🍕,🍟,🍔,🍩">Food</option>
+          <option value="🐶,🐱,🐵,🐰">Animals</option>
+          <option value="⚽,🏀,🏈,🎾">Sports</option>
+          <option value="😎,😂,😍,😱">Emojis</option>
+        </select>
+      </label>
+      <button id="start-btn">▶ Start Game</button>
+      <audio id="start-sound" src="sounds/gamestart.mp3" preload="auto"></audio>
+      <audio id="winner-sound" src="sounds/winner.mp3" preload="auto"></audio>
+    </div>
+
+    <!-- Game Area -->
+    <div id="game" class="hidden">
+    <h2 id="turn-info"></h2>
+
+    <div class="board-wrapper">
+        <div class="score player1-score">Player 1 : <span id="score1">0</span></div>
+        <div id="board"></div>
+        <div class="score player2-score">Player 2 : <span id="score2">0</span></div>
+    </div>
+
+    <button id="restart-btn" style="display: none;">Play Again</button>
+    <button id="newgame-btn" style="display: none;">New Game</button>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
