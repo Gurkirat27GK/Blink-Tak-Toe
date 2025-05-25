@@ -262,6 +262,7 @@ button {
 
 @media (max-width: 480px) {
   body {
+    margin-top: -20px;
     overflow: hidden; 
   }
 
